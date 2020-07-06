@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Leaderboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'styles/s4.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'styles/s3.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Leaderboard</h1>
+
+							
+							
+													<div class="table-wrapper">
+														<table class="alt uniform fixed">
+															<tbody>
+																{% for d in data %}
+																<tr>
+																	<td>{{ d.user }}</td>
+																	<td>{{ d.score }}</td>
+																	<td>{{d.medal}}</td>
+																</tr>
+																{% endfor %}
+															
+															</tbody>
+														</table>
+													</div>
+							
+						</div>
+						<div class="image">
+							<img src="{% static 'images/banner2.png' %}" alt="" />
+						</div>
+					</section>
+			</div>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>
